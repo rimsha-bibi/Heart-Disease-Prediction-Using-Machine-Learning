@@ -1,8 +1,8 @@
 # Heart-Disease-Prediction-Using-Machine-Learning
 Predicting heart disease using machine learning algorithms for accurate diagnostic insights.
 
-ITSOLERA: ML TEAM EPSILON
-Project: 01
+ITSOLERA: ML TEAM EPSILON Project: 01
+
 Title: Heart Disease Prediction Using Machine Learning
 
 Project Overview
