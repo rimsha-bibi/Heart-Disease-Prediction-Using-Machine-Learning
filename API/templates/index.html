@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #333333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-top: 10px;
+            text-align: left;
+            font-weight: bold;
+            color: #555555;
+        }
+        input[type="text"], select {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            font-size: 16px;
+            color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form action="/predict" method="post">
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="Age">
+            
+            <label for="gender">Gender:</label>
+            <select id="gender" name="Gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+            
+            <label for="cholesterol">Cholesterol:</label>
+            <input type="text" id="cholesterol" name="Cholesterol">
+            
+            <label for="blood_pressure">Blood Pressure:</label>
+            <input type="text" id="blood_pressure" name="Blood Pressure">
+            
+            <label for="heart_rate">Heart Rate:</label>
+            <input type="text" id="heart_rate" name="Heart Rate">
+            
+            <label for="smoking">Smoking:</label>
+            <select id="smoking" name="Smoking">
+                <option value="Current">Current</option>
+                <option value="Never">Never</option>
+                <option value="Former">Former</option>
+            </select>
+            
+            <label for="alcohol_intake">Alcohol Intake:</label>
+            <select id="alcohol_intake" name="Alcohol Intake">
+                <option value="Heavy">Heavy</option>
+                <option value="NaN">NaN</option>
+                <option value="Moderate">Moderate</option>
+            </select>
+            
+            <label for="exercise_hours">Exercise Hours:</label>
+            <input type="text" id="exercise_hours" name="Exercise Hours">
+            
+            <label for="family_history">Family History:</label>
+            <select id="family_history" name="Family History">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            
+            <label for="diabetes">Diabetes:</label>
+            <select id="diabetes" name="Diabetes">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            
+            <label for="obesity">Obesity:</label>
+            <select id="obesity" name="Obesity">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            
+            <label for="stress_level">Stress Level:</label>
+            <input type="text" id="stress_level" name="Stress Level">
+            
+            <label for="blood_sugar">Blood Sugar:</label>
+            <input type="text" id="blood_sugar" name="Blood Sugar">
+            
+            <label for="exercise_induced_angina">Exercise Induced Angina:</label>
+            <select id="exercise_induced_angina" name="Exercise Induced Angina">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            
+            <label for="chest_pain_type">Chest Pain Type:</label>
+            <select id="chest_pain_type" name="Chest Pain Type">
+                <option value="Atypical Angina">Atypical Angina</option>
+                <option value="Non-anginal Pain">Non-anginal Pain</option>
+                <option value="Asymptomatic">Asymptomatic</option>
+                <option value="Typical Angina">Typical Angina</option>
+            </select>
+            
+            <input type="submit" value="Predict">
+        </form>
+        <div class="result">{{ prediction_text }}</div>
+    </div>
+</body>
+</html>
